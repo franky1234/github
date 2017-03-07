@@ -1,0 +1,13 @@
+.center-block {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+label{
+  display: block;
+  color: #FFFFFF;
+}
+
+.shadow{
+  background-color: #2b3137;
+}

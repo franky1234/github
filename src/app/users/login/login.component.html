@@ -1,0 +1,39 @@
+<div class="container-fluid shadow">
+  <div class="row">
+    <div class="center-block">
+      Logo
+    </div>
+    <div class="center-block">
+      Sign In to Github
+    </div>
+      <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form>
+              <div class="form-group row">
+                <label for="username">Username</label>
+                <input 
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  placeholder="Write ur Username" 
+                  [(ngModel)]="user.username" #username="ngModel" required>
+              </div>
+              <div class="form-group row">
+                <label for="password">Password</label>
+                <input 
+                type="password"
+                class="form-control" 
+                id="password" 
+                name="password"
+                placeholder="Write ur password" 
+                [(ngModel)]="user.password" #password="ngModel" required>
+              </div>
+              <div class="form-group row">
+                <button type="submit" class="btn btn-primary form-control" (click)="authenticate(user)">Sign in</button>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>  
+</div>

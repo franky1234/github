@@ -1,0 +1,65 @@
+<div class="container-fluid" *ngIf="peopleOwner">
+    <div class="input-group search" >
+        <input type="text" class="form-control" placeholder="Search Peoples">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button"><strong>Members</strong></button>
+        </span>
+  </div>
+  <div >
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-6">
+          <div class="col-md-2">
+          <img src="#">
+          </div>
+          <div class="col-md-4">
+            <a href="javascript:void(0)"> {{ peopleOwner.owner }} </a>
+            <div>
+             {{ peopleOwner.username }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-2">
+            {{ peopleOwner.role }}
+          </div>
+          <div class="col-md-2">
+            {{ peopleOwner.teams }}
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-xs disabled">Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div >
+    <div class="panel panel-default" *ngFor=" let people of peopleOwner.peoples">
+      <div class="panel-body">
+        <div class="col-md-6">
+          <div class="col-md-2">
+          <img src="{{PATH}}{{ people.img }} " alt="Picture" height="50px" width="50px" title="{{ people.name }}">
+          </div>
+          <div class="col-md-4">
+            <a href="javascript:void(0)"> {{ people.name }} </a>
+            <div>
+              {{ people.username }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-2">
+            {{ people.role }}
+          </div>
+          <div class="col-md-2">
+            {{ people.teams }}
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-xs disabled">Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

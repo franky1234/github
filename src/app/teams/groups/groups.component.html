@@ -1,0 +1,71 @@
+<div *ngIf="teamOwner">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="col-md-4 col-height">
+        <div class="title">
+          Icons Fonts
+        </div>
+        <div class="content">
+          <p>All the icons you could dream of all wrapped up nice and neatly as web fonts.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-height">
+        <div class="title"> 
+          GitHub Browser Extensions 
+        </div>
+        <div class="content">
+          <p>Some useful and fun browser extensions to augment / personalize the GitHub browser experience.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-height">
+        <div class="title">
+            Open Source Operating Systems
+        </div>
+          <div class="content">
+          <p>Highlighting the cool and highly technical subset of the open source world, operating systems!</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+      <div class="input-group search" >
+          <input type="text" class="form-control" placeholder="Search Team">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button"><strong>New Team</strong></button>
+          </span>
+      </div>
+    <div >
+    <div class="panel panel-default" *ngFor="let team of teamOwner.groups">
+      <div class="panel-body">
+        <div class="col-md-3">
+            <div>
+              {{ team.name }}
+            </div>
+            <div>
+             {{ team.description }}
+            </div>
+        </div>
+        <div class="col-md-4">
+          <span>
+            <img src="#">
+          </span>
+          <span *ngFor="let people of team.peoples">
+          <img src="{{PATH}}{{ people.img }} " alt="Picture" height="50px" width="50px" title="{{ people.name }}">
+          </span>
+          
+        </div>
+        <div class="col-md-5">
+          <div class="col-md-4">
+            {{ team.peoples.length + 1 }} - members
+          </div>
+          <div class="col-md-1">
+            <button type="button" class="btn btn-primary btn-xs disabled">Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</div>

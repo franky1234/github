@@ -1,0 +1,8 @@
+<div class="container-fluid padding-left" *ngIf="repository">
+  <div class="col-md-8">
+    <app-repos-list [repositories]="repository.repos"></app-repos-list>
+  </div>
+  <div class="col-md-4">
+    <app-peoples-list [peoples]="repository.peoples" ></app-peoples-list>
+  </div>
+</div>

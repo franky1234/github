@@ -1,0 +1,25 @@
+<div class="input-group search" *ngIf="repositories">
+      <input type="text" class="form-control" placeholder="Search repositories">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Type: <strong>All</strong></button>
+      </span>
+</div>
+<div *ngFor="let repo of repositories">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a href="javascript:void(0)"> {{ repo.name }}</a>
+    </div>
+    <div class="panel-body">
+      {{ repo.description }}
+    </div>
+    <div class="panel-body">
+      <div class="col-md-6">
+        {{ repo.languaje }}
+      </div>
+      <div class="col-md-6">
+        {{ repo.date }}
+      </div>
+    </div>
+  </div>
+</div>
+  

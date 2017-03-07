@@ -1,0 +1,72 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="col-md-2">
+      <div class="navbar-header">
+        <a class="navbar-brand">Welcome:</a>
+        <a class="navbar-brand">{{ username }}</a>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Pull Request</a></li>
+        <li><a href="#">Issues</a></li>
+        <li><a href="#">Guist</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <div class="navbar-header">
+        <a class="navbar-brand">Bell</a>
+        <a class="navbar-brand">+</a>
+        <a class="navbar-brand">logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid padding-left">
+  <div class="col-md-2"></div>
+  <div class="col-md-9">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="{{statesTabs[0].state}}" (click)="onclickTab(0)" [routerLink]="['repositories',{repo:username}]"><a>Repositories</a></li>
+        <li class="{{statesTabs[1].state}}" (click)="onclickTab(1)" [routerLink]="['peoples',{people:username}]"><a>Peoples</a></li>
+        <li class="{{statesTabs[2].state}}" (click)="onclickTab(2)" [routerLink]="['teams',{team:username}]"><a>Teams</a></li>
+        <li class="{{statesTabs[3].state}}" (click)="onclickTab(3)" [routerLink]="['settings',{setting:username}]"><a>Settings</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+</div>
+<footer class="container-fluid">
+  <div class="col-md-2"></div>
+  <div class="col-md-9">
+    <div class="col-md-4">
+      <a href="javascript:void(0)"> Terms</a>
+      <a href="#" target="_self"> Privacy</a>
+      <a href="#" target="_self"> Security</a>
+      <a href="#" target="_self">Status</a>
+      <a href="#" target="_self"> Help</a>  
+    </div>
+    <div class="col-md-2">
+      <img src="#" alt="Android">
+    </div>
+    <div class="col-md-6">
+      <a href="#"> Contact GitHub</a>
+      <a href="#">API</a>
+      <a href="#">Training</a>
+      <a href="#">Shop</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+  <!-- href="javascript:void(0)" -->
+  <div class="col-md-1"></div>
+</footer>

@@ -1,0 +1,9 @@
+[class*="col-md-"]> a{
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-left: 5px;
+}
+
+.padding-left{
+  padding-left: 0px;
+}

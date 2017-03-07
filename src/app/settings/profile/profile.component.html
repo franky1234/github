@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <div class="col-md-3 margin">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="javascript:void(0)">Organization Settings</a></li>
+      <li><a href="javascript:void(0)">Profile</a></li>
+      <li><a href="javascript:void(0)">Members</a></li>
+      <li><a href="javascript:void(0)">Security</a></li>
+      <li><a href="javascript:void(0)">Audit Log</a></li>
+      <li><a href="javascript:void(0)">Blocked Users</a></li>
+      <li><a href="javascript:void(0)">Webhooks</a></li>
+      <li><a href="javascript:void(0)">Thirth party</a></li>
+      <li><a href="javascript:void(0)">Installed Integrations</a></li>
+      <li><a href="javascript:void(0)">Repositories</a></li>
+      <li><a href="javascript:void(0)">integrations</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="title"> Organization Profile </div>
+    <form #profileForm="ngForm">
+      <div class="form-group">
+        <label for="name">Organization display name:</label>
+        <input type="name" class="form-control" id="name" name="name" [(ngModel)]="custom.organization" 
+        #name="ngModel" minlength="4" maxlength="24" required>
+        <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+          <div [hidden]="!name.errors.required">
+            Name is required
+          </div>
+          <div [hidden]="!name.errors.minlength">
+            Name must be at least 4 characters.
+          </div>
+          <div [hidden]="!name.errors.maxlength">
+            Name cannot be more than 24 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email (will be Public):</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="custom.email"
+        #email="ngModel" minlength="4" maxlength="24" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+        <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+          <div [hidden]="!email.errors.pattern">
+            Email is not valid.
+          </div>
+          <div [hidden]="!email.errors.required">
+            Email is required
+          </div>
+          <div [hidden]="!email.errors.minlength">
+            Email must be at least 4 characters.
+          </div>
+          <div [hidden]="!email.errors.maxlength">
+            Email cannot be more than 24 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="desc">description:</label>
+        <textarea  type="description" class="form-control" id="desc" name="desc" [(ngModel)]="custom.description"
+        #desc="ngModel" minlength="5" maxlength="200" required></textarea>
+        <div *ngIf="desc.errors && (desc.dirty || desc.touched)" class="alert alert-danger">
+          <div [hidden]="!desc.errors.required">
+            Description is required
+          </div>
+          <div [hidden]="!desc.errors.minlength">
+            Description must be at least 5 characters.
+          </div>
+          <div [hidden]="!desc.errors.maxlength">
+            Description cannot be more than 200 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="url">URL(require https):</label>
+        <input type="url" class="form-control" id="url" name="url" [(ngModel)]="custom.url"
+        #url="ngModel" minlength="17" maxlength="50" pattern="^https:\/\/www.\w+(.com|.org)$" required>
+        <div *ngIf="url.errors && (url.dirty || url.touched)" class="alert alert-danger">
+          <div [hidden]="!url.errors.pattern">
+            Url is not valid.
+          </div>
+          <div [hidden]="!url.errors.required">
+            Url is required.
+          </div>
+          <div [hidden]="!url.errors.minlength">
+            Url must be at least 17 characters.
+          </div>
+          <div [hidden]="!url.errors.maxlength">
+            Url cannot be more than 50 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="location" class="form-control" id="location" name="location" [(ngModel)]="custom.location"
+        #location="ngModel" minlength="4" maxlength="100" required>
+        <div *ngIf="location.errors && (location.dirty || location.touched)" class="alert alert-danger">
+          <div [hidden]="!location.errors.pattern">
+            Location is not valid.
+          </div>
+          <div [hidden]="!location.errors.required">
+            Location is required.
+          </div>
+          <div [hidden]="!location.errors.minlength">
+            Location must be at least 4 characters.
+          </div>
+          <div [hidden]="!location.errors.maxlength">
+            Location cannot be more than 100 characters.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <div class="title">
+      Profile picture
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div>
+          <img src="../../../assets/img/profile.png" height="175" width="170" alt="profile">
+        </div>
+        <div class="panel-footer">
+          <button type="button" class="btn btn-primary" [disabled]="!profileForm.form.valid" >Upload New Picture</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="panel panel-default" *ngIf="peoples">
+  <div class="panel-body">
+    <div class="col-md-8">
+     People
+    </div>
+    <div class="col-md-4">
+       {{ peoples.length }} <a href="javascript:void(0)"> <strong> > </strong> </a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-3" *ngFor=" let people of FOUR">
+      <img src="{{PATH}}{{ people.img }} " alt="Picture" height="50px" width="50px" title="{{ people.name }}">
+    </div>
+  </div>
+</div>
